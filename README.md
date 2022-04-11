@@ -190,7 +190,7 @@ The order of your commits this time does not matter, but refer back to the MVP t
 
 ## Deliverables
 
-- A Pokedex app that meets all the MVP requirements outlined at the beginning of this markdown.
+- If this is a homework/deliverable, a Pokedex app must meet all the MVP requirements outlined at the beginning of this markdown.
 
 ## Technical Requirements
 
