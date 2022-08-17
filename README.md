@@ -43,7 +43,8 @@ Your app should:
 
 1. Work inside the given `pokedex` folder
 2. Ideally, your app should follow the MVC format of models, views, and controllers (these are your routes for now).
-3. Setup your routes in your controllers: pokemon_controller.js
+3. Create a server.js file for your app configuration (refer to sell it up notion).
+4. Setup your routes in your controllers: pokemon_controller.js.
 
 ## Routes
 
@@ -75,17 +76,17 @@ Your app should use RESTful routes:
 
 ```jsx
 const express = require("express");
-const app = express();
+const router = express.Router()
 
 const Pokemon = require("../models/pokemon.js");
 
 // INDEX
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.render("index.ejs", { data: Pokemon });
 });
 
 // SHOW
-app.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   res.render("show.ejs", { data: Pokemon[req.params.id] });
 });
 
