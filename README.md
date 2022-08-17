@@ -43,8 +43,7 @@ Your app should:
 
 1. Work inside the given `pokedex` folder
 2. Ideally, your app should follow the MVC format of models, views, and controllers (these are your routes for now).
-3. However, note you don't actually need a controllers folder for now since all your routes will be in your `server.js` file
-4. If you finish with Day 2 Requirements early - refactor your server.js and migrate your routes to a `pokemon_controller.js`
+3. Setup your routes in your controllers: pokemon_controller.js
 
 ## Routes
 
