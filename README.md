@@ -72,7 +72,7 @@ Your app should use RESTful routes:
 
 ## Need a jumpstart?
 
-## Some server.js starter code to get you started
+## Some pokemon_controller.js starter code to get you started
 
 ```jsx
 const express = require("express");
