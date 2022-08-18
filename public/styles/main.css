@@ -18,25 +18,54 @@ h1 {
 }
 
 
+h2 {
+    font-family: 'Silkscreen', cursive;
+    color: black;
+}
+
+p {
+    font-size: 0.5em;
+    margin: .5em;
+    text-shadow: 2px 2px 2px rgb(81, 144, 90);
+}
+
 .pokedex-owner-name {
     font-family: 'Silkscreen', cursive;
     font-size: 1em;
-    width: 6.9em;
+    width: 7.3em;
     height: 1.2em;
-    background-color: red;
+    background-color: rgb(254, 51, 51);
     position: absolute;
-    margin: 3.5em 5em 3em 11em;
+    margin: 3.5em 5em 3em 10.7em;
     text-align: center;
     color: black;
+    color: transparent;
+    text-shadow: 0 0 1.4px rgb(29, 29, 29);
+    font-weight: 100;
 
 }
 
 .pokedex-image-container {
+    width: 18.7em;
+    height: 18.15em;
+    position: absolute;
+    margin: 6.09em 3.9em 5em 2.2em;
+    overflow-y: auto;
+    
+}
+
+.pokedex-logo {
     width: 14em;
     height: 16em;
-    position: absolute;
-    margin: 7.4em 3.9em 5em 3.9em;
-    overflow-y: auto;
+    object-fit: contain;
+    margin: 2.2em;
+}
+
+.pokemon-image{
+    width: 14em;
+    height: 16em;
+    object-fit: contain;
+    margin: 2.2em;
 }
 
 .pokedex-id {
@@ -44,47 +73,129 @@ h1 {
     font-size: 1em;
     width: 5em;
     height: 1.2em;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0%);
     position: absolute;
     margin: 6.2em 10em 3em 2.2em;
+    z-index: 1;
 }
 
-.pokemon-image{
-    width: 14em;
-    height: 16em;
+.pokedex-page {
+    font-family: 'Silkscreen', cursive;
+    font-size: 1em;
+    width: 12em;
+    height: 1.2em;
+    background-color: rgb(255, 255, 255, 0%);
+    position: absolute;
+    margin: 6.2em 10em 3em 8.2em;
+    text-align: right;
+    z-index: 1;
 }
+
+
 
 .pokedex-pokemon-name {
     font-family: 'Silkscreen', cursive;
     font-size: 1em;
-    width: 10em;
+    width: 9.5em;
     height: 1.2em;
-    background-color: rgba(133, 186, 60, 100%);
+    background-color: rgb(144, 198, 69, 100%);
     position: absolute;
     margin: 25.9em 10em 3em 2em;
-    
+    text-align: left;
+    border: 0;
+    text-shadow: 2px 2px 2px rgb(81, 144, 90);
 }
 
 .pokedex-pokemon-type {
     font-family: 'Silkscreen', cursive;
     font-size: 1em;
-    width: 7em;
+    width: 10em;
     height: 1.2em;
-    background-color: rgba(133, 186, 60, 100%);
+    background-color: rgb(144, 198, 69, 100%);
     position: absolute;
-    margin: 25.9em 4em 3em 14em;
+    margin: 25.9em 4em 3em 11em;
+    text-align: right;
+    text-shadow: 2px 2px 2px rgb(81, 144, 90);
     
+}
+
+.pokedex-pokemon-type-insert {
+    font-family: 'Silkscreen', cursive;
+    font-size: 1em;
+    width: 10em;
+    height: 1.2em;
+    background-color: rgb(144, 198, 69, 100%);
+    position: absolute;
+    margin: 0em 4em 3em -5em;
+    border: 0;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(81, 144, 90);
 }
 
 .pokedex-pokemon-description {
     font-family: 'Silkscreen', cursive;
     font-size: 1em;
     width: 9.9em;
-    height: 4.5em;
-    background-color: rgba(133, 186, 60, 100%);
+    height: 4.7em;
+    background-color: rgb(144, 198, 69, 100%);
     position: absolute;
-    margin: 28.1em 7.1em 3em 7.1em;
-    
+    margin: 28.05em 7.1em 3em 7.1em;
+    overflow-y: auto;
+    text-shadow: 2px 2px 2px rgb(81, 144, 90);
+}
+
+.pokedex-up {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: rgba(133, 186, 60, 0%);
+    position: absolute;
+    margin: 33.9em 5em 3em 4em;
+    border-radius: 0%;
+}
+
+.pokedex-down {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: rgba(133, 186, 60, 0%);
+    position: absolute;
+    margin: 37.2em 5em 3em 4em;
+    border-radius: 0%;
+}
+
+.pokedex-left {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: rgba(133, 186, 60, 0%);
+    position: absolute;
+    margin: 35.6em 5em 3em 2.4em;
+    border-radius: 0%;
+}
+
+.pokedex-right {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: rgba(133, 186, 60, 0%);
+    position: absolute;
+    margin: 35.6em 5em 3em 5.6em;
+    border-radius: 0%;
+}
+
+.pokedex-enter {
+    width: 2.2em;
+    height: 2.2em;
+    background-color: rgba(133, 186, 60, 0%);
+    position: absolute;
+    margin: 36.3em 5em 3em 23.2em;
+    border-radius: 50%;
+}
+
+.pokedex-delete {
+    width: 1.8em;
+    height: 1.8em;
+    background-color: rgba(133, 186, 60, 0%);
+    position: absolute;
+    margin: 33.7em 5em 3em 22em;
+    border-radius: 50%;
 }
 
 .pokedex-container {

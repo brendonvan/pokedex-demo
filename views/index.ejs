@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
-    <link rel="stylesheet" href="/styles/main.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');</style>
-</head>
+<%- include('partials/header.ejs') %>
 <body>
     <h1>Pokedex</h1>
     <div class="pokedex-container">
-        <div class="pokedex-owner-name">VAN</div>
-        <div class="pokedex-id">No.01</div>
-        <div class="pokedex-image-container">
-            <img class="pokemon-image" src="http://img.pokemondb.net/artwork/bulbasaur.jpg" alt="bulbasaur"></img>
-            <img class="pokemon-image" src="http://img.pokemondb.net/artwork/squirtle.jpg" alt="squirtle"></img>
-            <img class="pokemon-image" src="http://img.pokemondb.net/artwork/charmander.jpg" alt="charmander"></img>
-        </div>
-        <div class="pokedex-pokemon-name">Pokemon Name</div>
-        <div class="pokedex-pokemon-type">Type()</div>
-        <div class="pokedex-pokemon-description">Description Blahblahblah WahhWahhWahh</div>
+        
+            <div class="pokedex-owner-name">Brendon V.</div>
+            <div class="pokedex-id">No.---</div>
+            <div class="pokedex-page">Main Menu</div>
+            <div class="pokedex-image-container">
+                <img class="pokedex-logo"src="https://user-images.githubusercontent.com/37731582/39395092-949193b4-4ada-11e8-9f21-c049a771bbcc.png" alt="pokedex-logo.png">
+                <% pokemonDB.forEach((pokemon, index) => { %>
+                    <img class="pokemon-image" src="<%= pokemon.img %>" alt="image_of_<%= pokemon.name %>"></img>
+                <% }) %>
+            </div>
+            <div class="pokedex-pokemon-name">------- ----</div>
+            <div class="pokedex-pokemon-type">----()</div>
+            <div class="pokedex-pokemon-description">List of discovered pokemon</div>
+            <a href="/pokedex/151"><button class="pokedex-up" type="submit"></button></a>
+            <a href="/pokedex/1"><button class="pokedex-down" type="submit"></button></a>
+            <a href="/pokedex"><button class="pokedex-left" type="submit"></button></a>
+            <a href="/pokedex/new"><button class="pokedex-right" type="submit"></button></a>
+            <button class="pokedex-delete" type="submit"></button>
+            <button class="pokedex-enter" type="submit"></button>
+
     </div>
 </body>
 </html>

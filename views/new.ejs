@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <h1>Pokedex</h1>
+    <div class="pokedex-container">
+        <div class="pokedex-owner-name">B.VAN</div>
+        <div class="pokedex-page">Add Discovered Pokemon</div>
+        <form action="/pokedex" method="post"></form>
+            <input class="pokedex-id" style="width: 5em" type="text" name="pokemonURL" placeholder="No.---">
+            <div class="pokedex-image-container">
+                <br>
+                <br>
+                <br>
+                <h2 style="color: black; text-align: center;">Enter Pokemon Photo</h2>
+                <input style="margin-left: 2em; width: 18em; font-family: 'Silkscreen', cursive;" type="text" name="pokemonURL" placeholder="URL">
+                <img style="margin-left: 7em; width: 5em; height: 6em; object-fit: contain;" src="/assets/camera.jpg" alt="camera.jpg">
+            </div>
+            <input class="pokedex-pokemon-name" name="pokemonName" placeholder="Enter name"></input>
+            <div class="pokedex-pokemon-type">Type(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+                <input class="pokedex-pokemon-type-insert" style="width: 5em" type="text" name="pokemonURL" placeholder="Enter">)
+            </div>
+            
+            <div class="pokedex-pokemon-description">Enter pokemon descriptions</div>
+            
+            <button class="pokedex-delete" type="reset"></button>
+            <button class="pokedex-enter" type="submit"></button>
+        </form>
+        <a href="/pokedex/151"><button class="pokedex-up" type="submit"></button></a>
+        <a href="/pokedex/1"><button class="pokedex-down" type="submit"></button></a>
+        <a href="/pokedex"><button class="pokedex-left" type="submit"></button></a>
+        <a href="/pokedex/new"><button class="pokedex-right" type="submit"></button></a>
+    </div>
+</body>
+</html>

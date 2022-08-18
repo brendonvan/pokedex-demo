@@ -1,0 +1,38 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <h1>Pokedex</h1>
+    <div class="pokedex-container">
+        
+            <div class="pokedex-owner-name">B.VAN</div>
+            <div class="pokedex-id">No.<%= pokemon.id %></div>
+            <div class="pokedex-page"><%= pokemon.name %></div>
+            <div class="pokedex-image-container">
+                <img class="pokemon-image" src="<%= pokemon.img %>" alt="<%= pokemon.name %>"></img>
+            </div>
+            <div class="pokedex-pokemon-name"><%= pokemon.name %></div>
+            <div class="pokedex-pokemon-type">Type(<%= pokemon.type[0] %>)</div>
+            <div class="pokedex-pokemon-description">
+                <p> Description </p>
+                <p>Type: <%= pokemon.type %></p>
+                <p>Classification: <%= pokemon.misc.classification %></p>
+                <p>Height: <%= pokemon.misc.height %></p>
+                <p>Weight: <%= pokemon.misc.weight %></p>
+                <p>Capture Rate: <%= pokemon.misc.capturerate %>%</p>
+                <p>Egg Steps: <%= pokemon.misc.eggsteps %></p>
+                <p>EXP Growth: <%= pokemon.misc.expgrowth %></p>
+                <p>Happiness: <%= pokemon.misc.happiness %></p>
+                <p>Evopoints: <%= pokemon.misc.evopoints %></p>
+                <p>Fleeflag: <%= pokemon.misc.fleeflag %></p>
+                <p>Entreeforestlevel: <%= pokemon.misc.entreeforestlevel %></p>
+                
+            </div>
+            <a href="/pokedex/<%= parseInt(pokemon.id) - 1 %>"><button class="pokedex-up" type="submit"></button></a>
+            <a href="/pokedex/<%= parseInt(pokemon.id) + 1 %>"><button class="pokedex-down" type="submit"></button></a>
+            <a href="/pokedex/"><button class="pokedex-left" type="submit"></button></a>
+            <a href="/pokedex/"><button class="pokedex-right" type="submit"></button></a>
+            <button class="pokedex-delete" type="submit"></button>
+            <button class="pokedex-enter" type="submit"></button>
+
+    </div>
+</body>
+</html>
