@@ -1,33 +1,76 @@
 <%- include('partials/header.ejs') %>
+<script src="/scripts/pokedex_autofill.js" type="text/javascript" defer></script>
+</head>
+<script>
+    function clearForm() {
+        let textFields = document.querySelectorAll(".pokedexInput");
+        textFields.forEach((textField) => {
+            textField.value = "";
+        })
+    }
+</script>
+
 <body>
     <h1>Pokedex</h1>
     <div class="pokedex-container">
         <div class="pokedex-owner-name">Brendon V.</div>
         <div class="pokedex-page">Add Discovered Pokemon</div>
-        <form action="/pokedex" method="post"></form>
-            <input class="pokedex-id" style="border: 0; width: 5em" type="text" name="pokemonURL" placeholder="No.---">
+        <form action="/pokedex" method="POST">
+            <div class="pokedex-id">No.<%= pokemonDB.length + 1 %></div>
             <div class="pokedex-image-container">
                 <br>
                 <br>
                 <br>
                 <h2 style="color: black; text-align: center;">Enter Pokemon Photo</h2>
-                <input style="margin-left: 2em; width: 18em; font-family: 'Silkscreen', cursive;" type="text" name="pokemonURL" placeholder="URL">
+                <input class="pokedexInput" style="margin-left: 2em; width: 18em; font-family: 'Silkscreen', cursive;" type="text" placeholder="URL" name="img">
                 <img style="margin-left: 7em; width: 5em; height: 6em; object-fit: contain;" src="/assets/camera.jpg" alt="camera.jpg">
             </div>
-            <input class="pokedex-pokemon-name" name="pokemonName" placeholder="Enter name"></input>
-            <div class="pokedex-pokemon-type">Type(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
-                <input class="pokedex-pokemon-type-insert" style="width: 5em" type="text" name="pokemonURL" placeholder="Enter">)
+            <input class="pokedex-pokemon-name pokedexInput" placeholder="Enter name" name="name"></input>
+            <div class="pokedex-pokemon-type">Type(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+            <div class="pokedex-description-container">
+                <div class="pokedex-pokemon-description">
+                    <p> Description </p>
+                    <p>Type: <input class="description-input" type="text" name="type"></p>
+                    <p>Stats <br>
+                        HP: <input class="description-input" type="text" name="statshp"><br>
+                        attack: <input class="description-input" type="text" name="statsattack"><br>
+                        defense: <input class="description-input" type="text" name="statsdefense"><br>
+                        spattack: <input class="description-input" type="text" name="statsspattack"><br>
+                        spdefense: <input class="description-input" type="text" name="statsspdefense"><br>
+                        speed: <input class="description-input" type="text" name="statsspeed">
+                    </p>
+                    <p>Misc </p> 
+                    <p>Sex: <br>
+                        Male: <input class="description-input" type="text" name="miscsexmale"> <br>
+                        Female: <input class="description-input" type="text" name="miscsexfemale"> <br>
+                    </p>
+                    <p>Abilities: <br>
+                        Normal: <input class="description-input" type="text" name="miscabilitiesnormal"> <br>
+                        Hidden: <input class="description-input" type="text" name="miscabilitieshidden"> <br>
+                    </p>
+                    <p>Classification: <input class="description-input" type="text" name="miscclassification"></p>
+                    <p>Height: <input class="description-input" type="text" name="mischeight"></p>
+                    <p>Weight: <input class="description-input" type="text" name="miscweight"></p>
+                    <p>Capture Rate: <input class="description-input" type="text" name="misccapturerate"></p>
+                    <p>Egg Steps: <input class="description-input" type="text" name="misceggsteps"></p>
+                    <p>EXP Growth: <input class="description-input" type="text" name="miscexpgrowth"></p>
+                    <p>Happiness: <input class="description-input" type="text" name="mischappiness"></p>
+                    <p>Evopoints: <input class="description-input" type="text" name="miscevpoints"></p>
+                    <p>Fleeflag: <input class="description-input" type="text" name="miscfleeflag"></p>
+                    <p>Entreeforestlevel: <input class="description-input" type="text" name="miscentreeforestlevel"></p>
+                    
+                </div>
             </div>
             
-            <div class="pokedex-pokemon-description">Enter pokemon descriptions</div>
             
-            <button class="pokedex-delete" type="reset"></button>
+            <button onclick="clearForm()" value="Reset form" class="pokedex-delete" type="reset"></button>
             <button class="pokedex-enter" type="submit"></button>
         </form>
         <div class="new-led" style="background-color: rgb(0, 188, 25);"></div>
         <div class="home-led" style="background-color: rgb(3, 120, 19);"></div>
         <div class="show-led" style="background-color: rgb(3, 120, 19);"></div>
-        <a href="/pokedex/151"><button class="pokedex-up" type="submit"></button></a>
+        <button class="description-autofill">Autofill</button>
+        <a href="/pokedex/<%= pokemonDB.length %>"><button class="pokedex-up" type="submit"></button></a>
         <a href="/pokedex/1"><button class="pokedex-down" type="submit"></button></a>
         <a href="#"><button class="pokedex-left" type="submit"></button></a>
         <a href="/pokedex"><button class="pokedex-right" type="submit"></button></a>

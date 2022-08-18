@@ -27,6 +27,7 @@ p {
     font-size: 0.5em;
     margin: .5em;
     text-shadow: 2px 2px 2px rgb(81, 144, 90);
+    text-align: center;
 }
 
 .pokedex-owner-name {
@@ -42,7 +43,6 @@ p {
     color: transparent;
     text-shadow: 0 0 1.4px rgb(29, 29, 29);
     font-weight: 100;
-
 }
 
 .pokedex-image-container {
@@ -76,6 +76,17 @@ p {
     background-color: rgb(255, 255, 255, 0%);
     position: absolute;
     margin: 6.2em 10em 3em 2.2em;
+    z-index: 1;
+}
+
+.pokedex-id-insert {
+    font-family: 'Silkscreen', cursive;
+    font-size: 1em;
+    width: 1em;
+    height: 1.2em;
+    background-color: rgb(255, 255, 255, 0%);
+    position: absolute;
+    margin: 6.2em 10em 3em 4.2em;
     z-index: 1;
 }
 
@@ -124,7 +135,7 @@ p {
 .pokedex-pokemon-name {
     font-family: 'Silkscreen', cursive;
     font-size: 1em;
-    width: 9.5em;
+    width: 9em;
     height: 1.2em;
     background-color: rgb(144, 198, 69, 100%);
     position: absolute;
@@ -160,6 +171,16 @@ p {
     text-shadow: 2px 2px 2px rgb(81, 144, 90);
 }
 
+.pokedex-description-container {
+    font-family: 'Silkscreen', cursive;
+    font-size: 1em;
+    width: 9.9em;
+    height: 4.7em;
+    position: absolute;
+    margin: 28.05em 7.1em 3em 7.1em;
+    overflow-y: auto;
+}
+
 .pokedex-pokemon-description {
     font-family: 'Silkscreen', cursive;
     font-size: 1em;
@@ -167,9 +188,26 @@ p {
     height: 4.7em;
     background-color: rgb(144, 198, 69, 100%);
     position: absolute;
-    margin: 28.05em 7.1em 3em 7.1em;
     overflow-y: auto;
     text-shadow: 2px 2px 2px rgb(81, 144, 90);
+}
+
+.description-autofill {
+    font-family: 'Silkscreen', cursive;
+    font-size: .2em;
+    width: 52em;
+    height: 2.5em;
+    line-height: 0;
+    position: absolute;
+    margin: 136.8em 17.7em 3em 34.2em;
+    background-color: rgb(85, 85, 85);
+    z-index: 1;
+}
+
+.description-input {
+    background-color: rgb(103, 145, 46);
+    font-family: 'Silkscreen', cursive;
+    font-size: .5em;
 }
 
 .pokedex-up {

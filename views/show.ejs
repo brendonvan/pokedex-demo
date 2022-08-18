@@ -1,4 +1,5 @@
 <%- include('partials/header.ejs') %>
+</head>
 <body>
     <h1>Pokedex</h1>
     <div class="pokedex-container">
@@ -6,26 +7,46 @@
             <div class="pokedex-owner-name">Brendon V.</div>
             <div class="pokedex-id">No.<%= pokemon.id %></div>
             <div class="pokedex-page">INFO</div>
-            <div class="pokedex-image-container">
-                <img class="pokemon-image" src="<%= pokemon.img %>" alt="<%= pokemon.name %>"></img>
-            </div>
+            <img class="pokedex-image-container" src="<%= pokemon.img %>" alt="<%= pokemon.name %>"></img>
+            
             <div class="pokedex-pokemon-name"><%= pokemon.name %></div>
             <div class="pokedex-pokemon-type">Type(<%= pokemon.type[0] %>)</div>
-            <div class="pokedex-pokemon-description">
-                <p> Description </p>
-                <p>Type: <%= pokemon.type %></p>
-                <p>Classification: <%= pokemon.misc.classification %></p>
-                <p>Height: <%= pokemon.misc.height %></p>
-                <p>Weight: <%= pokemon.misc.weight %></p>
-                <p>Capture Rate: <%= pokemon.misc.capturerate %>%</p>
-                <p>Egg Steps: <%= pokemon.misc.eggsteps %></p>
-                <p>EXP Growth: <%= pokemon.misc.expgrowth %></p>
-                <p>Happiness: <%= pokemon.misc.happiness %></p>
-                <p>Evopoints: <%= pokemon.misc.evopoints %></p>
-                <p>Fleeflag: <%= pokemon.misc.fleeflag %></p>
-                <p>Entreeforestlevel: <%= pokemon.misc.entreeforestlevel %></p>
-                
+            <div class="pokedex-description-container">
+                <div class="pokedex-pokemon-description">
+                    <p> Description </p>
+                    <p>Type: <%= pokemon.type %></p>
+                    <p>Stats: <br>
+                        HP: <%= pokemon.stats.hp %> <br>
+                        attack: <%= pokemon.stats.attack %> <br>
+                        defense: <%= pokemon.stats.defense %> <br>
+                        spattack: <%= pokemon.stats.spattack %> <br>
+                        spdefense: <%= pokemon.stats.spdefense %> <br>
+                        speed: <%= pokemon.stats.speed %>
+                    </p>
+                    <p>Misc: </p>
+                    <p>Sex: <br>
+                        Male: <%= pokemon.misc.sex.male %> <br>
+                        Female: <%= pokemon.misc.sex.female %> <br>
+                    </p>
+                    <p>Abilities: <br>
+                        Normal: <%= pokemon.misc.abilities.normal %> <br>
+                        Hidden: <%= pokemon.misc.abilities.hidden %> <br>
+                    </p>
+                    <p>Classification: <%= pokemon.misc.classification %></p>
+                    <p>Height: <%= pokemon.misc.height %></p>
+                    <p>Weight: <%= pokemon.misc.weight %></p>
+                    <p>Capture Rate: <%= pokemon.misc.capturerate %>%</p>
+                    <p>Egg Steps: <%= pokemon.misc.eggsteps %></p>
+                    <p>EXP Growth: <%= pokemon.misc.expgrowth %></p>
+                    <p>Happiness: <%= pokemon.misc.happiness %></p>
+                    <p>Evopoints: <%= pokemon.misc.evopoints %></p>
+                    <p>Fleeflag: <%= pokemon.misc.fleeflag %></p>
+                    <p>Entreeforestlevel: <%= pokemon.misc.entreeforestlevel %></p>
+                    
+                </div>
+
             </div>
+            
             <div class="new-led" style="background-color: rgb(3, 120, 19);"></div>
             <div class="home-led" style="background-color: rgb(3, 120, 19);"></div>
             <div class="show-led" style="background-color: rgb(0, 188, 25);"></div>    

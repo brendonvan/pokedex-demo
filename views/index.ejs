@@ -1,15 +1,16 @@
 <%- include('partials/header.ejs') %>
+</head>
 <body>
     <h1>Pokedex</h1>
     <div class="pokedex-container">
         
             <div class="pokedex-owner-name">Brendon V.</div>
             <div class="pokedex-id">No.---</div>
-            <div class="pokedex-page">Home</div>
+            <div class="pokedex-page">Seen: <%= pokemonDB.length %></div>
             <div class="pokedex-image-container">
                 <img class="pokedex-logo"src="https://user-images.githubusercontent.com/37731582/39395092-949193b4-4ada-11e8-9f21-c049a771bbcc.png" alt="pokedex-logo.png">
                 <% pokemonDB.forEach((pokemon, index) => { %>
-                    <img class="pokemon-image" src="<%= pokemon.img %>" alt="image_of_<%= pokemon.name %>"></img>
+                    <a href="/pokedex/<%= pokemon.id %>"><img class="pokemon-image" src="<%= pokemon.img %>" alt="image_of_<%= pokemon.name %>"></img></a>
                 <% }) %>
             </div>
             <div class="new-led"></div>
@@ -17,8 +18,11 @@
             <div class="show-led"></div>
             <div class="pokedex-pokemon-name">------- ----</div>
             <div class="pokedex-pokemon-type">----(-----)</div>
-            <div class="pokedex-pokemon-description">List of discovered pokemon</div>
-            <a href="/pokedex/151"><button class="pokedex-up" type="submit"></button></a>
+            <div class="pokedex-description-container">
+                <div class="pokedex-pokemon-description">List of discovered pokemon</div>
+            </div>
+            
+            <a href="/pokedex/<%= pokemonDB.length %>"><button class="pokedex-up" type="submit"></button></a>
             <a href="/pokedex/1"><button class="pokedex-down" type="submit"></button></a>
             <a href="/pokedex/new"><button class="pokedex-left" type="submit"></button></a>
             <a href="/pokedex/1"><button class="pokedex-right" type="submit"></button></a>

@@ -1,5 +1,4 @@
-console.log('pokedex_scroll JS:loaded');
-
+console.log('Scroll JS:loaded');
 let pokemonNo;
 
 let pokedexID = document.querySelector('.pokedex-id');
