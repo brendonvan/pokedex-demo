@@ -2,10 +2,10 @@
 <body>
     <h1>Pokedex</h1>
     <div class="pokedex-container">
-        <div class="pokedex-owner-name">B.VAN</div>
+        <div class="pokedex-owner-name">Brendon V.</div>
         <div class="pokedex-page">Add Discovered Pokemon</div>
         <form action="/pokedex" method="post"></form>
-            <input class="pokedex-id" style="width: 5em" type="text" name="pokemonURL" placeholder="No.---">
+            <input class="pokedex-id" style="border: 0; width: 5em" type="text" name="pokemonURL" placeholder="No.---">
             <div class="pokedex-image-container">
                 <br>
                 <br>
@@ -24,10 +24,13 @@
             <button class="pokedex-delete" type="reset"></button>
             <button class="pokedex-enter" type="submit"></button>
         </form>
+        <div class="new-led" style="background-color: rgb(0, 188, 25);"></div>
+        <div class="home-led" style="background-color: rgb(3, 120, 19);"></div>
+        <div class="show-led" style="background-color: rgb(3, 120, 19);"></div>
         <a href="/pokedex/151"><button class="pokedex-up" type="submit"></button></a>
         <a href="/pokedex/1"><button class="pokedex-down" type="submit"></button></a>
-        <a href="/pokedex"><button class="pokedex-left" type="submit"></button></a>
-        <a href="/pokedex/new"><button class="pokedex-right" type="submit"></button></a>
+        <a href="#"><button class="pokedex-left" type="submit"></button></a>
+        <a href="/pokedex"><button class="pokedex-right" type="submit"></button></a>
     </div>
 </body>
 </html>
