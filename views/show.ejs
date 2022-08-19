@@ -3,12 +3,10 @@
 <body>
     <h1>Pokedex</h1>
     <div class="pokedex-container">
-        
             <div class="pokedex-owner-name">Brendon V.</div>
             <div class="pokedex-id">No.<%= pokemon.id %></div>
             <div class="pokedex-page">INFO</div>
             <img class="pokedex-image-container" src="<%= pokemon.img %>" alt="<%= pokemon.name %>"></img>
-            
             <div class="pokedex-pokemon-name"><%= pokemon.name %></div>
             <div class="pokedex-pokemon-type">Type(<%= pokemon.type[0] %>)</div>
             <div class="pokedex-description-container">
@@ -42,11 +40,8 @@
                     <p>Evopoints: <%= pokemon.misc.evopoints %></p>
                     <p>Fleeflag: <%= pokemon.misc.fleeflag %></p>
                     <p>Entreeforestlevel: <%= pokemon.misc.entreeforestlevel %></p>
-                    
                 </div>
-
             </div>
-            
             <div class="new-led" style="background-color: rgb(3, 120, 19);"></div>
             <div class="home-led" style="background-color: rgb(3, 120, 19);"></div>
             <div class="show-led" style="background-color: rgb(0, 188, 25);"></div>    
@@ -55,7 +50,6 @@
             <a href="/pokedex/<%= parseInt(pokemon.id) + 1 %>"><button class="pokedex-down" type="submit"></button></a>
             <a href="/pokedex/"><button class="pokedex-left" type="submit"></button></a>
             <a href="/pokedex/<%= pokemon.id - 1 %>/edit"><button class="pokedex-right" type="submit"></button></a>
-            
             <form action="/pokedex/<%= parseInt(pokemon.id) %>?_method=DELETE" method="POST">
                 <button class="pokedex-delete" type="submit"></button>                    
             </form>

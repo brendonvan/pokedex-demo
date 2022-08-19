@@ -53,10 +53,10 @@ router.put('/:id', (req, res) => {
     let pokemonID = parseInt(req.params.id) - 1;
     pokedexDatabase[pokemonID] = req.body;
     res.redirect(`/pokedex/${pokemonID}`);
+    console.log(pokedexDatabase[pokemonID]);
 })
 
 router.post('/', (req, res) => {
-    
     pokedexDatabase.push({
         id: pokedexDatabase.length,
         name: req.body.name,
