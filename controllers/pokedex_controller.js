@@ -7,6 +7,7 @@
 // Configuration
 const express = require('express');
 const router = express.Router();
+let pushed = 0;
 
 // Middleware
 router.use(express.urlencoded({ extended: true}));
@@ -21,13 +22,16 @@ router.get('/new', (req, res) => {
     res.render('new.ejs', {pokemonDB: pokedexDatabase});
 })
 
-
-router.get('/0', (req, res) => {
-    res.redirect(`/pokedex/${pokedexDatabase.length}`);
+router.get('/:id/edit', (req, res) => {
+    res.render('edit.ejs', {pokemon: pokedexDatabase[parseInt(req.params.id)]});
 })
 
 router.get(`/${pokedexDatabase.length + 1}`, (req, res) => {
     res.redirect('/pokedex/1');
+})
+
+router.get('/0', (req, res) => {
+    res.redirect(`/pokedex/${pokedexDatabase.length}`);
 })
 
 router.get('/:id', (req, res) => {
@@ -35,16 +39,46 @@ router.get('/:id', (req, res) => {
     res.render('show.ejs', context);
 })
 
+
 router.post('/', (req, res) => {
-    console.log(pokedexDatabase.length + 1);
+    
     pokedexDatabase.push({
-        id: pokedexDatabase.length + 1,
+        id: pokedexDatabase.length,
         name: req.body.name,
         img: req.body.img,
+        type: [req.body.type],
         stats: {
-            hp: req.body.statshp
+            hp: req.body.statshp,
+            attack: req.body.statsattack,
+            defense: req.body.statsdefense,
+            spattack: req.body.statsspattack,
+            spdefense: req.body.statsspdefense,
+            speed: req.body.speed,
         },
+        moves: {},
+        damages: {},
+        misc: {
+            sex: {
+                male: req.body.miscsexmale,
+                female: req.body.miscsexfemale
+            },
+            abilities: {
+                normal: req.body.miscabilitiesnormal,
+                hidden: req.body.miscabilitieshidden
+            },
+            classification: req.body.miscclassification,
+            height: req.body.mischeight,
+            weight: req.body.miscweight,
+            capturerate: req.body.misccapturerate,
+            eggsteps: req.body.misceggsteps,
+            expgrowth: req.body.miscexpgrowth,
+            happiness: req.body.mischappiness,
+            evpoints: req.body.miscevpoints, 
+            fleeflag: req.body.miscfleeflag, 
+            entreeforestlevel: req.body.miscentreeforestlevel
+        }
     });
+    pushed++;
     // console.log(pokedexDatabase.length);
     // console.log(pokedexDatabase[pokedexDatabase.length - 1]);
     res.redirect('/pokedex');
