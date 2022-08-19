@@ -10,6 +10,7 @@ const router = express.Router();
 let pushed = 0;
 
 // Middleware
+router.use(express.json());
 router.use(express.urlencoded({ extended: true}));
 const pokedexDatabase = require('../models/pokemon')
 
@@ -22,10 +23,6 @@ router.get('/new', (req, res) => {
     res.render('new.ejs', {pokemonDB: pokedexDatabase});
 })
 
-router.get('/:id/edit', (req, res) => {
-    res.render('edit.ejs', {pokemon: pokedexDatabase[parseInt(req.params.id)]});
-})
-
 router.get(`/${pokedexDatabase.length + 1}`, (req, res) => {
     res.redirect('/pokedex/1');
 })
@@ -34,11 +31,29 @@ router.get('/0', (req, res) => {
     res.redirect(`/pokedex/${pokedexDatabase.length}`);
 })
 
+router.get('/:id/edit', (req, res) => {
+    res.render('edit.ejs', {pokemon: pokedexDatabase[parseInt(req.params.id)]});
+})
+
+router.delete('/:pokemonID', (req, res) => {
+    pokedexDatabase.forEach((pokemon, idx) => {
+        if(parseInt(pokemon.id) == req.params.pokemonID) {
+            pokedexDatabase.splice( idx, 1);
+        }
+    })
+    return res.redirect('/pokedex');
+});
+
 router.get('/:id', (req, res) => {
     const context = { pokemon: pokedexDatabase[req.params.id - 1]};
     res.render('show.ejs', context);
 })
 
+router.put('/:id', (req, res) => {
+    let pokemonID = parseInt(req.params.id) - 1;
+    pokedexDatabase[pokemonID] = req.body;
+    res.redirect(`/pokedex/${pokemonID}`);
+})
 
 router.post('/', (req, res) => {
     

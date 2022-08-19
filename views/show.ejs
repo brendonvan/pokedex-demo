@@ -54,8 +54,11 @@
             <a href="/pokedex/<%= parseInt(pokemon.id) - 1 %>"><button class="pokedex-up" type="submit"></button></a>
             <a href="/pokedex/<%= parseInt(pokemon.id) + 1 %>"><button class="pokedex-down" type="submit"></button></a>
             <a href="/pokedex/"><button class="pokedex-left" type="submit"></button></a>
-            <a href="/pokedex/<%= pokemon.id %>/edit"><button class="pokedex-right" type="submit"></button></a>
-            <button class="pokedex-delete" type="submit"></button>
+            <a href="/pokedex/<%= pokemon.id - 1 %>/edit"><button class="pokedex-right" type="submit"></button></a>
+            
+            <form action="/pokedex/<%= parseInt(pokemon.id) %>?_method=DELETE" method="POST">
+                <button class="pokedex-delete" type="submit"></button>                    
+            </form>
             <button class="pokedex-enter" type="submit"></button>
 
     </div>

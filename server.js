@@ -5,10 +5,12 @@ const PORT = 8080;
 
 // Imports
 const pokedexController = require('./controllers/pokedex_controller');
+const methodOverride = require('method-override');
 
 // Middleware 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'));
 app.use('/pokedex', pokedexController);
 
 app.get('/', (req, res) => {

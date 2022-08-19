@@ -15,7 +15,7 @@
     <div class="pokedex-container">
         <div class="pokedex-owner-name">Brendon V.</div>
         <div class="pokedex-page">Edit Discovered Pokemon</div>
-        <form action="/pokedex" method="POST">
+        <form action="/pokedex/<%= pokemon.id %>?_method=PUT" method="POST">
             <div class="pokedex-id">No.</div>
             <input type="text" class="pokedex-id-insert" placeholder="<%= pokemon.id %>" name="id">
             <div class="pokedex-image-container">
