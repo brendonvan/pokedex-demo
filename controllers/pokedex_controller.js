@@ -36,6 +36,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.delete('/:pokemonID', (req, res) => {
+    
     pokedexDatabase.forEach((pokemon, idx) => {
         if(parseInt(pokemon.id) == req.params.pokemonID) {
             pokedexDatabase.splice( idx, 1);

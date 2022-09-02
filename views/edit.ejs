@@ -24,7 +24,7 @@
                 <br>
                 <h2 style="color: black; text-align: center;">Edit Pokemon Photo</h2>
                 <input class="pokedexInput" style="margin-left: 2em; width: 18em; font-family: 'Silkscreen', cursive;" type="text" placeholder="<%= pokemon.img %>" name="img">
-                <img style="margin-left: 7em; width: 5em; height: 6em; object-fit: contain;" src="/assets/camera.jpg" alt="camera.jpg">
+                <img style="margin-left: 7em; width: 5em; height: 6em; object-fit: contain;" src="/assets/edit.jpg" alt="camera.jpg">
             </div>
             <input class="pokedex-pokemon-name pokedexInput" placeholder="<%= pokemon.name %>" name="name"></input>
             <div class="pokedex-pokemon-type">Type(<%= pokemon.type[0] %>)</div>
@@ -59,11 +59,8 @@
                     <p>Evopoints: <input class="description-input" type="text" placeholder="<%= pokemon.misc.evopoints %>" name="miscevpoints"></p>
                     <p>Fleeflag: <input class="description-input" type="text" placeholder="<%= pokemon.misc.fleeflag %>" name="miscfleeflag"></p>
                     <p>Entreeforestlevel: <input class="description-input" type="text" placeholder="<%= pokemon.misc.entreeforestlevel %>" name="miscentreeforestlevel"></p>
-                    
                 </div>
             </div>
-            
-            
             <button onclick="clearForm()" value="Reset form" class="pokedex-delete" type="reset"></button>
             <button class="pokedex-enter" type="submit"></button>
         </form>

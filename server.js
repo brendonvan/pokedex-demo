@@ -1,7 +1,7 @@
 // Configuration
 const express = require('express');
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 4000;
 
 // Imports
 const pokedexController = require('./controllers/pokedex_controller');
